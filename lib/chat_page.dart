@@ -14,10 +14,12 @@ class ChatPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
+        centerTitle: true,
         title: Text('Hii Elton!'),
         actions: [
           IconButton(
               onPressed: (){
+                Navigator.pop(context);
                 print('Icon Pressed');
               }, 
               icon: const Icon(Icons.logout)),

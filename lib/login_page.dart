@@ -1,3 +1,4 @@
+import 'package:chat_app/chat_page.dart';
 import 'package:flutter/material.dart';
 
 
@@ -7,16 +8,22 @@ class LoginPage extends StatelessWidget {
 final _formKey = GlobalKey<FormState>();
 
   // Function to handle login
-void loginUser() {
+void loginUser(context) {
 
-  if (_formKey.currentState!= null && _formKey.currentState!.validate()) {
+  if (_formKey.currentState != null && _formKey.currentState!.validate()) {
   
-  print(userNameController.text);
-  print(passwordController.text);
+    print(userNameController.text);
+    print(passwordController.text);
   
-  print('Login successful');
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => ChatPage()));
   
-  }else {
+
+    print('Login successful');
+  
+  } else {
     print('Login failed');
   }
 }
@@ -115,12 +122,15 @@ final passwordController = TextEditingController();
             ),
 
             ElevatedButton(
-              onPressed: loginUser, 
-      
+              onPressed: (){ 
+                loginUser(context);
+              },
+
               child: Text(
-              'Login', 
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.w300),
-              )),
+                'Login', 
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.w300),
+              ),
+            ),
 
 
             GestureDetector(
