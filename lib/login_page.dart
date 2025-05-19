@@ -18,7 +18,9 @@ void loginUser(context) {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => ChatPage()));
+        builder: (context) => ChatPage(
+          userName: userNameController.text,
+          )));
   
 
     print('Login successful');

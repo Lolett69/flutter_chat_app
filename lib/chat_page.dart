@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 
 
 class ChatPage extends StatelessWidget {
-  const ChatPage({Key? key}) : super(key: key);
+  final String userName;
+  const ChatPage({Key? key, required this.userName}) : super(key: key);
 
 
 
@@ -15,7 +16,7 @@ class ChatPage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        title: Text('Hii Elton!'),
+        title: Text('Hii $userName!'),
         actions: [
           IconButton(
               onPressed: (){
