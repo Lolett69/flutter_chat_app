@@ -2,11 +2,18 @@ import 'package:flutter/material.dart';
 
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+   LoginPage({Key? key}) : super(key: key);
 
 void loginUser() {
+    print(userNameController.text);
+    print(passwordController.text);
+
     print('Login successful');
   }
+
+final userNameController = TextEditingController();
+final passwordController = TextEditingController();
+
 
   @override
   Widget build(BuildContext context) {
@@ -49,29 +56,46 @@ void loginUser() {
                 height: 200,
               ),
             
+
+            TextField(
+              controller: userNameController,
+            
+              decoration: InputDecoration(
+                hintText: 'Add your username',
+                hintStyle: TextStyle(
+                  color: Colors.blueGrey,
+                ),
+                border: OutlineInputBorder(),
+              ),
+            ),
+
+            TextField(
+              controller: passwordController,
+              obscureText: true,
+              decoration: InputDecoration(
+                hintText: 'Type your Password',
+                hintStyle: TextStyle(
+                  color: Colors.blueGrey,
+                ),
+                border: OutlineInputBorder(),
+              ),
+            ),
+            
             ElevatedButton(
               onPressed: loginUser, 
       
               child: Text(
-              'Click Me' , 
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.w300),
+              'Login', 
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.w300),
               )),
 
 
-            InkWell(
-              splashColor: Colors.red,
+            GestureDetector(
               onDoubleTap: () {
                 print('Double Tapped');
               },
 
-              onLongPress: () {
-                print('Long Pressed');
-              },
-
-              onTap: () {
-
-                print('Linked Clicked');
-              },
+             
               child: Column(
                 children: [
                   Text('Find us on'),
