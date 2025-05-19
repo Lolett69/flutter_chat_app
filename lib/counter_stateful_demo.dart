@@ -22,11 +22,16 @@ class _CounterStatefulState extends State<CounterStateful> {
   int counter = 0;
 
   void increment() {
+    if (mounted){
     setState(() {
       counter++;
     });
+    }
     print(counter);
   }
+  
+  
+
 
   @override
   Widget build(BuildContext context) {
