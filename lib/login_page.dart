@@ -15,7 +15,7 @@ void loginUser(context) {
     print(userNameController.text);
     print(passwordController.text);
   
-    Navigator.pushNamed(
+    Navigator.pushReplacementNamed(
       context,
       '/chat',
       arguments: userNameController.text,
