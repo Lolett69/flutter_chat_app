@@ -15,14 +15,11 @@ void loginUser(context) {
     print(userNameController.text);
     print(passwordController.text);
   
-    Navigator.push(
+    Navigator.pushNamed(
       context,
-      MaterialPageRoute(
-        builder: (context) => ChatPage(
-          userName: userNameController.text,
-          )));
-  
-
+      '/chat',
+      arguments: userNameController.text,
+    );
     print('Login successful');
   
   } else {
