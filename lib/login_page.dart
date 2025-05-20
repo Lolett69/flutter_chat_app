@@ -41,11 +41,11 @@ final _mainUrl = 'https://github.com/callmeEltonBernil/chat_app/commits/main/';
   Widget build(BuildContext context) {
     return Scaffold(
       
-
-      body: Padding(
-        padding: const EdgeInsets.all(24.0),
-        child: Center(
-          child: Column(
+      backgroundColor: Colors.white,
+      body: Center(
+        child: Padding(
+           padding: const EdgeInsets.all(24.0),
+           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
       
@@ -73,11 +73,18 @@ final _mainUrl = 'https://github.com/callmeEltonBernil/chat_app/commits/main/';
                 ),
               ),
       
-              Image.asset(
-                'assets/chat_app_image.png',
+              verticalSpacing(24),
+                Container(
                 height: 200,
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                image: DecorationImage(
+                fit: BoxFit.fitWidth,
+                image: AssetImage('assets/chat_app_image.png')),
+                borderRadius: BorderRadius.circular(56)),
               ),
             
+              verticalSpacing(24),
 
             Form(
               key: _formKey,
