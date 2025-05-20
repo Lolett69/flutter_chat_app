@@ -5,8 +5,35 @@ import 'package:flutter/material.dart';
 
 
 class ChatPage extends StatelessWidget {
-  const ChatPage({Key? key}) : super(key: key);
+   ChatPage({Key? key}) : super(key: key);
 
+
+  final List<ChatMessageEntity> _messages = [
+    ChatMessageEntity(
+      author: Author(username: 'Elton Bernil'),
+      createdAt: DateTime.now().microsecondsSinceEpoch,
+      id: '1',
+      text: 'First Text',
+      imageUrl: '', // Provide a valid image URL or leave empty
+
+    ),
+    
+    ChatMessageEntity(
+      author: Author(username: 'Elton Bernil'),
+      createdAt: DateTime.now().microsecondsSinceEpoch,
+      id: '2',
+      text: 'Second Text',
+      imageUrl: 'https://3009709.youcanlearnit.net/Alien_LIL_131338.png',
+    ),
+
+    ChatMessageEntity(
+      author: Author(username: 'Elli'),
+      createdAt: DateTime.now().microsecondsSinceEpoch,
+      id: '3',
+      text: 'Third Text',
+      imageUrl: '',
+    ),
+  ];
 
 
   @override
@@ -38,22 +65,16 @@ class ChatPage extends StatelessWidget {
            
 
             child: ListView.builder(
-              itemCount: 10,
+              itemCount: _messages.length,
               itemBuilder: (context, index) {
 
               return ChatBubble(
               
-                alignment: index  % 2 == 0 
-                    ?Alignment.centerLeft
-                    : Alignment.centerRight,
+                alignment: _messages[index].author.username == 'Elton Bernil'
+                    ?Alignment.centerRight
+                    : Alignment.centerLeft,
                     
-                entity: ChatMessageEntity( 
-                  id: '1234',
-                  text: 'Hello, this is Elton Bernil',
-                  createdAt: DateTime.now().microsecondsSinceEpoch,
-                  author: Author(username: 'Elton Bernil',),
-                  imageUrl: '', // Provide a valid image URL or leave empty if not needed
-                  ));
+                entity: _messages[index],);
             })),
             
         ChatInput(),
