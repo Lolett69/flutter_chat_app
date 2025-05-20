@@ -20,8 +20,8 @@ class _ChatPageState extends State<ChatPage> {
   
 
   _loadInitialMessages() async{
-    final response = await rootBundle.loadString('assets/mock_messages.json');
-    
+    rootBundle.loadString('assets/mock_messages.json').then((response) {
+  
     final List <dynamic> decodeList = jsonDecode(response) as List;
     
     final List<ChatMessageEntity> _chatMessages = decodeList.map((listItem) {
@@ -33,7 +33,13 @@ class _ChatPageState extends State<ChatPage> {
     //Finally, add the messages to the list
     setState(() {
       _messages = _chatMessages;
+
+        });
+    }).then((_) {
+      print('Done loading messages');
     });
+
+    print('Someething');
   }
 
   onMessageSent(ChatMessageEntity entity) {
