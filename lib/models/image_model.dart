@@ -5,7 +5,7 @@ part 'image_model.g.dart';
 
 @JsonSerializable()
 
-class PixelformImage{
+class PixelfordImage{
 
   String id;
   String filename;
@@ -18,7 +18,7 @@ class PixelformImage{
   String urlSmallSize;
 
 
-  PixelformImage({
+  PixelfordImage({
     required this.id,
     required this.filename,
     required this.title,
@@ -26,7 +26,7 @@ class PixelformImage{
     required this.urlSmallSize,
   });
 
-  factory PixelformImage.fromJson(Map<String, dynamic> json) => 
+  factory PixelfordImage.fromJson(Map<String, dynamic> json) => 
   
   _$PixelformImageFromJson(json);
 
