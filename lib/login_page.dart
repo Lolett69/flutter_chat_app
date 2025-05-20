@@ -69,8 +69,8 @@ final passwordController = TextEditingController();
                 ),
               ),
       
-              Image.network(
-                'https://3009709.youcanlearnit.net/Alien_LIL_131338.png',
+              Image.asset(
+                'assets/chat_app_image.png',
                 height: 200,
               ),
             
