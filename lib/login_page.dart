@@ -3,6 +3,7 @@ import 'package:chat_app/utils/spaces.dart';
 import 'package:chat_app/utils/textfield_styles.dart';
 import 'package:chat_app/widgets/login_text_field.dart';
 import 'package:flutter/material.dart';
+import 'package:social_media_buttons/social_media_button.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 
@@ -144,6 +145,23 @@ final _mainUrl = 'https://github.com/callmeEltonBernil/chat_app/commits/main/';
                 ],
               ),
             ),
+
+            Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+
+                  SocialMediaButton.twitter(
+                    size: 20,
+                    color: Colors.blue,
+                      url: 'https://twitter.com/callmeEltonBernil',),
+
+                  SocialMediaButton.linkedin(
+                    url: 'https://linkedin.com/callmeEltonBernil',)
+
+                  
+                ],
+
+            )
             ],
             
           ),
