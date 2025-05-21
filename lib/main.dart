@@ -9,7 +9,9 @@ import 'package:provider/provider.dart';
 
 
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await AuthService.init();
   runApp(Provider(
     create: (BuildContext context) => AuthService(),
     child: ChatApp(),
